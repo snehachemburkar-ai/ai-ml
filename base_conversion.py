@@ -67,46 +67,7 @@ print("Result=", result)
 
 #    ##Function base conversion
 
-# In[30]:
-
-
-
-
-
-# In[ ]:
-
-
-
-    
-
-    
-
-
-# In[93]:
-
-
-#import math
-#global number
-#global base
-#global result
-#result=0
-#number=4623
-#for x in range(4):
- #   extractlastdigit(digit)
-  #  calculate_result(x,result)
-#print("Result=", result) 
-
-
-# In[56]:
-
-
-
-
-        
-
-
-# In[35]:
-
+# 
 
 
 def extractlastdigit():
@@ -129,8 +90,6 @@ def extractlastdigit():
             extractlastdigit() 
 
 
-# In[36]:
-
 
 #Recursive program 
 import math
@@ -141,26 +100,6 @@ i=1
 number=4623
 extractlastdigit()
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
