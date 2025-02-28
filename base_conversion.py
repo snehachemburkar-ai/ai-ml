@@ -1,60 +1,36 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[14]:
 
-
-# 2. Convert base 8 base 10 for 4 digit number
-x=5942
-base=8
-
-
-# In[15]:
-
-
+# # 2. Convert base 13 to base 10 for 4 digit number
+x=5949
+base=13
+print("base:",base)
 d0=x%10
 print(d0)
-
-
-# In[16]:
-
-
 x = x // 10
 print(x)
 d1=x%10
 print(d1)
-
-
-# In[17]:
-
-
 x=x//10
 d2=x%10
 print(d2)
-
-
-# In[18]:
-
 
 x=x//10
 d3=x%10
 print(d3)
 
 
-# In[21]:
+convert=d0*1+d1*13+d2*13*13+d3*13*13*13
+print("Coverted number B(13)",x," to decimal",convert)
 
-
-convert=d0*1+d1*8+d2*8*8+d3*8*8*8
-print(convert)
-
-
-# In[46]:
-
+# 2. Convert base 13 to base 10 for 4 digit number
 
 import math
-number=4623
-base=8
+number=4629
+base=13
 result=0
+print("base:",base)
 for x in range(4):
    digit=number%10
    print("digit:",digit)
@@ -62,43 +38,53 @@ for x in range(4):
   # print("number:",number)
    #print("x:",x)
    result=result+digit*(math.pow(base,x))
-print("Result=", result)
+print("Converted base(13) to decimal =", result)
 
 
 #    ##Function base conversion
 
 # 
+# 2. Convert base 13 to base 10 for 4 digit number with alphabets
 
+import math
+result=0
+base=13
+print("base:",base)
+number="462C"
+print("number to be converted: "+number)
 
-def extractlastdigit():
+def findnum(num):
+     if(num=='A'):
+        num=10
+     elif(num=='B'):
+         num=11
+     else:
+         num=12
+     return num
+     
+def converBase13toDecimal(number):
         global digit
         global result
         global base
-        global number
         global i
-        print("digit: ", digit)
-        print("number: ",number)
-        print("i: ",i)
-        digit=number % 10
-        number=number // 10
-        result=result+digit*(math.pow(base,i))
-        print("Result=", result)
-        i=i+1
-        if(number==0):
-             print("Final Result=", result)
-        else:
-            extractlastdigit() 
+        i=0
+        numlen =len(number)
+        print("Number Length: ",numlen)
+        while(numlen>=1):
+           digit=number[numlen-1]
+           if((digit=='A') or (digit=='B') or (digit=='C')):
+                 num=findnum(digit)
+           else:
+               num=int(digit)
+           print("Number in int : ",num)
+           result=result+num*(math.pow(base,i))
+           print(result)
+           numlen=numlen-1
+           i=i+1
+        print("Final Result=", result)
+converBase13toDecimal(number)
 
 
-
-#Recursive program 
-import math
-digit=1
-result=0
-base=8
-i=1
-number=4623
-extractlastdigit()
 
 
 
