@@ -33,7 +33,7 @@ result=0
 print("base:",base)
 for x in range(4):
    digit=number%10
-   print("digit:",digit)
+   #print("digit:",digit)
    number=number//10
   # print("number:",number)
    #print("x:",x)
@@ -47,11 +47,9 @@ print("Converted base(13) to decimal =", result)
 # 2. Convert base 13 to base 10 for 4 digit number with alphabets
 
 import math
-result=0
 base=13
-print("base:",base)
-number="462C"
-print("number to be converted: "+number)
+print("base: ",base)
+
 
 def findnum(num):
      if(num=='A'):
@@ -68,24 +66,30 @@ def converBase13toDecimal(number):
         global base
         global i
         i=0
+        result=0
         numlen =len(number)
-        print("Number Length: ",numlen)
+        #print("Number Length: ",numlen)
         while(numlen>=1):
            digit=number[numlen-1]
            if((digit=='A') or (digit=='B') or (digit=='C')):
                  num=findnum(digit)
            else:
                num=int(digit)
-           print("Number in int : ",num)
+           #print("Number in int : ",num)
            result=result+num*(math.pow(base,i))
-           print(result)
+           #print(result)
            numlen=numlen-1
            i=i+1
-        print("Final Result=", result)
-converBase13toDecimal(number)
+        print("Converted base(13): ", number," to decimal =", int(result))
+        return(result)
 
 
 
+converBase13toDecimal('10')
+converBase13toDecimal('20')
+converBase13toDecimal('30')
+converBase13toDecimal('100')
+converBase13toDecimal('46AC')
 
 
 

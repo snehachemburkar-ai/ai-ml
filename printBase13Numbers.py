@@ -34,7 +34,8 @@ def convertDecimaltobase13(x):
       code=convert(x)
     return code
       
-num=0 
-for x in range(50):
+
+
+
+for x in range(75):
    print(convertDecimaltobase13(x))
-  
