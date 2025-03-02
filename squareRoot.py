@@ -7,7 +7,7 @@ Created on Sat Mar  1 22:03:49 2025
 Recursive function for Squareroot
 """
 
-import math
+#import math
 
 def findSqrt(left,right,num):
      mid=(left+right)/2
@@ -22,7 +22,7 @@ def findSqrt(left,right,num):
         findSqrt(left,right,num)       
      
 
-num=-5
+num=4
 #print("Squareroot by math lib:",math.sqrt(num))
 if(num<=0):
     num=abs(num)
