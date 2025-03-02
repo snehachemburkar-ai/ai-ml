@@ -7,12 +7,12 @@ Created on Sat Mar  1 22:03:49 2025
 Recursive function for Squareroot
 """
 
-
+import math
 
 def findSqrt(left,right,num):
      mid=(left+right)/2
-     diff=abs(mid*mid-num)
-     if(diff<=0.00001):
+     diff=abs(mid*mid- num)
+     if(diff<=0.000001):
        print(f"Squareroot of {num} :", mid)
      else:  
         if((mid*mid)>num):
@@ -22,11 +22,16 @@ def findSqrt(left,right,num):
         findSqrt(left,right,num)       
      
 
-num=55
-if(num>0):
-   right=num
-   left=0
+num=-5
+#print("Squareroot by math lib:",math.sqrt(num))
+if(num<=0):
+    num=abs(num)
+    right=abs(num)
+    left=0
+elif(num<=1):
+   right=1
+   left=num
 else:
-    left=num
-    right=0
+    left=0
+    right=num
 findSqrt(left,right,num)
