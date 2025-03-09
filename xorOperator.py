@@ -9,17 +9,19 @@ Created on Sat Mar  8 14:51:12 2025
 #find content of file using xor operation
 
 
-def backup(f1,f2):
-    bac=""
-    f3=[]
-    for (a,b) in  zip (f1,f2):
-        f3=bin(ord(a)^ord(b))
-        bac=bac+f3
-        #print(bac)
-    return bac
+def xorArray(a1,a2,a3):
+    fArr=[]
+    for (a,b,c) in  zip (a1,a2,a3):
+       res=a^b^c
+    fArr.append(res)
+    return fArr
 
-        
-f1="I am learning python"
-f2="AI/ML is intresting"
-backupFile=backup(f1,f2)
-print("Backup file content : ",backupFile)
+a1=[5,3,7]
+a2=[2,9,0]
+a3=[1,4,3]  
+result=xorArray(a1,a2,a3)
+print("Xor of array : ",result)
+xorResult=[xorArray(a1,a2,a3),xorArray(a2,a1,a3),xorArray(a3,a2,a1)]   
+print("Array of Xor array : ",xorResult)
+
+

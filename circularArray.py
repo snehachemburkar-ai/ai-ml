@@ -24,4 +24,4 @@ for i in range(len(arr)-1):
        arr1[i]=arr1[i+1]^arr1[i]
        arr1[i+1]=arr1[i+1]^ arr1[i]
 arr[len(arr)-1]=temp
-print("After Swap  using Zor :",arr1)
+print("After Swap  using Xor :",arr1)
