@@ -5,7 +5,7 @@ Created on Sat Mar  8 22:36:19 2025
 
 @author: schemburkar
 """
-import math 
+
 
 def minArr(a):
     temp=a[0]
