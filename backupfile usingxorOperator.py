@@ -36,9 +36,10 @@ def findfileContent(backup,f2):
     
 def convertbintostr(f):
     file1=""
-    for i in range(1, len(f),9):
-       arr = f[i:i+9]
+    for i in range(0, len(f),8):
+       arr = f[i:i+8]
        print(arr)
+       arr=format(arr, '08b')
        arr=arr[2:]
        print(arr)
        num = int(arr,2)
