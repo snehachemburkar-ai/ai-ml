@@ -8,24 +8,33 @@ Created on Sun Mar 23 14:59:24 2025
 
 
 train_data = [[1,10], [2, 20], [3, 30], [10, 110]]
-
-def knn(data, x):
-    for i in range (len(data)-1):
-        if(abs(data[i][0]-x)<=0.99):
-             return(data[i][1])
-         
-nearest_value=knn(train_data,3)
-print("KNN value ",nearest_value )    
+test_data=[[3,4], [9, 100], [5, 55]]
+   
 
 
 def knn1(data, x):
-    for i in range (len(data)-1):
-        diff1=abs(data[i][0]-x)
-        diff2=abs(data[i+1][0]-x)
-    if(diff1<diff2):
-         return(data[i][1])
-    else:
-         return(data[i+1][1])     
-         
-near_value=knn1(train_data,8)
-print("KNN value ",near_value )   
+    diff=abs(data[0][0]-x)
+    for i in range (1,len(data)):
+        if(diff>abs(data[i][0]-x)):
+            index=i
+        else:
+            index=0  
+    near_value=data[index][1]  
+    print("KNN value by approx",near_value) 
+    return(near_value)
+
+#knn1(train_data,1) 
+#knn1(train_data,1.3) 
+#knn1(train_data,9) 
+l=len(test_data)
+diff=0
+for i in range (l):
+      predictedValue=knn1(train_data,test_data[i][0])
+      print("Predicted value :",predictedValue)
+      diff=predictedValue-test_data[i][1]
+      mean_sqr=diff*diff
+mean_sqr_err=pow(mean_sqr,1/2)/l
+print("Mean Square value ",mean_sqr_err)
+
+abs_err=abs(diff)/l
+print("Absolute error",abs_err )   
