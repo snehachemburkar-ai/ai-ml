@@ -12,14 +12,15 @@ Created on Wed Mar 12 22:23:00 2025
 #import math 
 def generateCombination1(n,m):
      res=list(range(0,m))
-     print(res) 
+     #print(res) 
      #per=math.factorial(n)
-     for i in range (n):
-         for j in range (m):
-             temp=res[i]
-             res[i]=res[j]
-             res[j]=temp
-             print(res)
+     for i in range (0,n):
+         for j in range (0,m):
+             if(j!=i):
+               temp=res[i]
+               res[i]=res[j]
+               res[j]=temp
+               print(res)
      
 
-generateCombination1(4,5)
+generateCombination1(2,5)
