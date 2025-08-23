@@ -19,7 +19,7 @@ def find_distance(point1, point2):
     p = y2 - y1
     return math.sqrt(base*base + p * p)
 
-find_distance(rect1,rec2)
+print(find_distance((1,2),(5,6)))
 
 
 
