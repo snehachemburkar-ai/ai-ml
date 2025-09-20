@@ -14,12 +14,12 @@ test_data=[[3,4], [9, 100], [5, 55]]
 
 def binarySearch(data,low,high,x):
     index=0
-    mid=low+high//2
+    mid=(low+high)//2
     print(low,  mid,  high)
     diff=abs(data[low][0]-x)
     val=abs(data[mid][0]-x)
     print("diff val ",diff, val)
-    while(mid!=high or mid!=low):
+    while(low>high):
       if(diff > val):
         diff=data[mid]
         index=mid
